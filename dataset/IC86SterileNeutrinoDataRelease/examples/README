@@ -1,0 +1,27 @@
+/examples:
+==========
+
+This directory contains script examples that illustrate how the data release can be used. The examples are given in two programing languages: Mathematica and Python.
+
+/examples/Mathematica:
+======================
+
+Directory contains a Mathematica notebook named IceCubeDataReleaseExample, which has the following sections:
+
+- Looking at the data: explains how to draw reconstructed energy and cos(th) distributions.
+
+- Using the nominal MC and comparing it with data: explains how to load and weight the nominal Monte Carlo to one of the provided atmospheric neutrino models.
+
+- Using the detector response arrays: explains how to use the detector systematic response arrays in combinations with the provided averaged neutrino fluxes.
+
+/examples/Python:
+=================
+
+Directory contains three Python scripts that draw the following distributions:
+
+- 1D_energy_systematics.py: draws the reconstructed energy distribution both when using the nominal detector configuration and the seven provided flux variants, and when using the Honda+Gaisser provided model and the detector systematic variants.
+
+- 1D_energy_zenith_distribution.py: draws the reconstructed energy and reconstructed zenith distribution for the nominal detector configuration using the full monte carlo and with the provided Honda+Gaisser model. Furthermore, for comparison, it overlays the data.
+
+- 2D_energy_vs_zenith_systematics.py: draws distribution of events as a function of reconstructed cos(th) and reconstructed muon energy. Furthermore, for illustration, it also draws the effect of changing the DOM efficiency from its nominal value, 0.99, to 1.089.
+

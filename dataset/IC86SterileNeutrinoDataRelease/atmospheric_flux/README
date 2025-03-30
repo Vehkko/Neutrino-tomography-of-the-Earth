@@ -1,0 +1,42 @@
+/atmospheric_flux:
+=================
+
+This folder contains the atmospheric flux calculations used in the analysis. The 
+fluxes given in this file have been propagated through the Earth. For the record
+we also provide the initial unpropagated fluxes.
+
+/differential:
+=============
+The first format is a simple table where the flux with the following structure:
+
+# cos(th) NeutrinoEnergy nu_pion nubar_pion nu_kaon nubar_kaon
+
+where cos(th) is the cosine of the zenith angle, the NeutrinoEnergy is the energy 
+of the neutrino given in GeV, and the muon neutrino fluxes for the pion and kaon 
+components are given in GeV^-1 cm^-2 s^-1 sr^-1.
+
+/averaged:
+==========
+The second format is the bin-averaged neutrino flux, in which we have
+averaged over true energy bins, cos(th) bins, and azimuth. This is given in 
+order to more readily convolute with the detector response array.
+
+The flux tensor has the following indices:
+
+Phi_{cth,nu_e},
+
+where cth is the cosine of the zenith angle and nu_e is the neutrino energy bin index.
+
+The fluxes are given in HDF5 format and have the following data sets:
+
+average_flux_nu_kaon     Dataset {21, 200}
+average_flux_nu_pion     Dataset {21, 200}
+average_flux_nubar_kaon  Dataset {21, 200}
+average_flux_nubar_pion  Dataset {21, 200}
+costh_reco_bin_edges     Dataset {22}
+e_true_bin_edges         Dataset {201}
+
+where the numbers in braces are the sizes along each dimension of the set. The units
+of the neutrino energy bin edges are given in GeV and the averaged fluxes are given
+in GeV^-1 sr^-1 cm^-2 s^-1.
+

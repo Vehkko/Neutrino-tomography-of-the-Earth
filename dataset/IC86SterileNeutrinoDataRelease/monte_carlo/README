@@ -1,0 +1,21 @@
+/monte_carlo:
+============
+
+Contains the MC events reconstructed using the nominal detector configuration.
+The MC event properties listed are:
+
+# PDGID ReconstructedMuonEnergy cos(th_reco) NeutrinoEnergy cos(th_true) mcweight neutrino_from_pion_flux neutrino_from_kaon_flux,
+
+where PDGID is the Particle Data Group identifier of incident neutrino, cos(th_true) is cosine of the true direction, cos(th_reco) is the cosine of the reconstructed direction, NeutrinoEnergy is the energy of the neutrino in GeV, ReconstructedMuonEnergy is the reconstructed muon energy in GeV, and
+mcweight is event MC weight given in units of GeV cm^2 s sr. For convenience, we have also provided the pion and kaon neutrino flux for the Honda+Gaisser model.
+
+In order to obtain event distributions using this MC, you have to fold
+it in with the neutrino flux at the IceCube Detector. This flux should be given in units of 1/(GeV cm^2 s sr). The event weight is then given by
+
+weight = mcweight * neutrino_flux,
+
+where the neutrino_flux has to be evaluated in the true neutrino quantities.
+
+If one wishes to use the provided nominal Honda+Gaisser model, then:
+
+weight = mcweight * (neutrino_from_pion_flux + neutrino_from_kaon_flux)

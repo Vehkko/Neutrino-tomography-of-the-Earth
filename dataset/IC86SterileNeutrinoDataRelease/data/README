@@ -1,0 +1,9 @@
+/data:
+======
+
+This file contains the data event list. For each event two numbers are listed:
+
+# ReconstructedMuonEnergy z_th
+
+where ReconstructedMuonEnergy is the reconstructed muon energy and z_th is the reconstructed muon zenith angle given in radians.
+ 
